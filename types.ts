@@ -19,6 +19,11 @@ export type CompassDirection =
   | "NNW"
   | "N";
 
+export interface CompassDirectionObj {
+  direction: CompassDirection;
+  upperLimit: number;
+  lowerLimit: number;
+}
 export interface MagnetometerData {
   x: number;
   y: number;

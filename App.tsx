@@ -1,11 +1,5 @@
 import { Canvas, Circle, Group, Path, Skia } from "@shopify/react-native-skia";
-import React, {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   View,
   Text,
@@ -13,7 +7,6 @@ import {
   Pressable,
   Image,
   Dimensions,
-  Button,
 } from "react-native";
 import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import LottieView from "lottie-react-native";
@@ -24,11 +17,9 @@ import {
   angleMatchedToDevice,
   angleToDirection,
   autoAnimate,
-  compassDirections,
   getAngleFromMagnetometer,
-  getApproximateAngle,
 } from "./utils";
-import { CompassDirection, MagnetometerData } from "./types";
+import { CompassDirection } from "./types";
 
 const { width: sWidth, height: sHeight } = Dimensions.get("window");
 
@@ -86,6 +77,7 @@ const Compass = ({ angleOfRotation }: { angleOfRotation: number }) => {
         borderRadius: 50,
       }}
     >
+      <Text>{angleOfRotation}</Text>
       <Image
         source={require("./assets/arrow.png")}
         style={{
